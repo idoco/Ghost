@@ -12,6 +12,8 @@ require('./core/server/utils/startup-check').check();
 ghost().then(function (ghostServer) {
     // Mount our Ghost instance on our desired subdirectory path if it exists.
     parentApp.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
+    
+    console.log("=== test ===");
 
     // Let Ghost handle starting our server instance.
     ghostServer.start(parentApp);
